@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-test-tan-qui/static/css/main.acbb214e.css",
-    "main.js": "/frontend-test-tan-qui/static/js/main.1faa4f0e.js",
+    "main.css": "/frontend-test-tan-qui/static/css/main.38431bd4.css",
+    "main.js": "/frontend-test-tan-qui/static/js/main.4e884dfa.js",
     "static/media/moblie-hero-image.mov": "/frontend-test-tan-qui/static/media/moblie-hero-image.b1d49ccd25e31abf41b4.mov",
     "static/media/pc-hero-image.mov": "/frontend-test-tan-qui/static/media/pc-hero-image.b1d49ccd25e31abf41b4.mov",
     "static/media/tablet-hor-hero-image.mov": "/frontend-test-tan-qui/static/media/tablet-hor-hero-image.b1d49ccd25e31abf41b4.mov",
@@ -19,11 +19,13 @@
     "static/media/ice-cream.png": "/frontend-test-tan-qui/static/media/ice-cream.af1e1836817313a38275.png",
     "static/media/shutterstock.png": "/frontend-test-tan-qui/static/media/shutterstock.649340dd4f820d6db6d0.png",
     "static/media/img-block1-1.png": "/frontend-test-tan-qui/static/media/img-block1-1.5ff4f0d1189e2a110176.png",
+    "static/media/Roboto-Regular.ttf": "/frontend-test-tan-qui/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
+    "static/media/Roboto-Bold.ttf": "/frontend-test-tan-qui/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
     "static/media/img-block1-2.png": "/frontend-test-tan-qui/static/media/img-block1-2.1822bd144cd2ba9b12d0.png",
     "static/media/img-block1-3.png": "/frontend-test-tan-qui/static/media/img-block1-3.275f173c51fe130c52ee.png",
     "static/media/social-media-card-image-2.png": "/frontend-test-tan-qui/static/media/social-media-card-image-2.8d8a356573d029b5c819.png",
-    "static/media/social-media-card-image-1.png": "/frontend-test-tan-qui/static/media/social-media-card-image-1.12557b6ea7be2eeb6adf.png",
     "service-worker.js": "/frontend-test-tan-qui/service-worker.js",
+    "static/media/social-media-card-image-1.png": "/frontend-test-tan-qui/static/media/social-media-card-image-1.12557b6ea7be2eeb6adf.png",
     "static/media/social-media-card-image-3.png": "/frontend-test-tan-qui/static/media/social-media-card-image-3.2638dcc13553e737679b.png",
     "static/media/social-media-card-image-4.png": "/frontend-test-tan-qui/static/media/social-media-card-image-4.e59797283c208ed7154e.png",
     "static/media/fishing-white.svg": "/frontend-test-tan-qui/static/media/fishing-white.c9cac0b65df2856c69a41230645da091.svg",
@@ -44,11 +46,11 @@
     "static/media/arrow-right.svg": "/frontend-test-tan-qui/static/media/arrow-right.02d7c313dcc9ddc7820c9deb281939c7.svg",
     "static/media/arrow-left.svg": "/frontend-test-tan-qui/static/media/arrow-left.9ffc71bb598f7494bd182ff8ff6bb672.svg",
     "static/media/fr.svg": "/frontend-test-tan-qui/static/media/fr.426e479b06ed2c02b1c640c9bb85b17c.svg",
-    "main.acbb214e.css.map": "/frontend-test-tan-qui/static/css/main.acbb214e.css.map",
-    "main.1faa4f0e.js.map": "/frontend-test-tan-qui/static/js/main.1faa4f0e.js.map"
+    "main.38431bd4.css.map": "/frontend-test-tan-qui/static/css/main.38431bd4.css.map",
+    "main.4e884dfa.js.map": "/frontend-test-tan-qui/static/js/main.4e884dfa.js.map"
   },
   "entrypoints": [
-    "static/css/main.acbb214e.css",
-    "static/js/main.1faa4f0e.js"
+    "static/css/main.38431bd4.css",
+    "static/js/main.4e884dfa.js"
   ]
 }
