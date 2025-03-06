@@ -114,7 +114,8 @@ interface IState {
   zoom: any,
   currentDate: any,
   locations: any[],
-  lstBooking: any[]
+  lstBooking: any[],
+  fruitActive: string,
 };
 
 class Home extends Component<IProps, IState> {
@@ -129,7 +130,8 @@ class Home extends Component<IProps, IState> {
       zoom: undefined,
       currentDate: dayjs("2025-01-01"),
       locations: fakeLocations,
-      lstBooking: []
+      lstBooking: [],
+      fruitActive: IMAGE.familleInside,
     };
   }
 
@@ -303,7 +305,7 @@ class Home extends Component<IProps, IState> {
   };
 
   render() {
-    let { page500, page400, pageMessage, origin, zoom, currentDate, locations } = this.state;
+    let { page500, page400, pageMessage, origin, zoom, currentDate, locations, fruitActive } = this.state;
     let { dataFill } = this.props;
 
 
@@ -338,22 +340,22 @@ class Home extends Component<IProps, IState> {
           <div className='row-icon-banner'>
             <div className='image-container'>
               <div>
-                <img className='hover-image' loading='lazy' src={SVG.mountainsWhite} />
+                <img className='hover-image' loading='lazy' src={SVG.mountainsWhite} alt='icon' />
                 <h5>Activites 1</h5>
               </div>
               <div>
-                <img className='hover-image' loading='lazy' src={SVG.fishingWhite} />
+                <img className='hover-image' loading='lazy' src={SVG.fishingWhite} alt='icon' />
                 <h5>Activites 2</h5>
               </div>
               <div>
-                <img className='hover-image' loading='lazy' src={SVG.crosshairWhite} />
+                <img className='hover-image' loading='lazy' src={SVG.crosshairWhite} alt='icon' />
                 <h5>Activites 3</h5>
               </div>
             </div>
           </div>
 
           <div className='icon-chat'>
-            <img className='hover-image' loading='lazy' src={SVG.chatWhite} />
+            <img className='hover-image' loading='lazy' src={SVG.chatWhite} alt='icon' />
           </div>
 
         </div>
@@ -386,7 +388,7 @@ class Home extends Component<IProps, IState> {
                       whileTap={{ scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <img className='image' loading='lazy' src={imageBlock1.find(x => x.index == index)?.image || IMAGE.imgBlock11} />
+                      <img className='image' loading='lazy' alt='icon' src={imageBlock1.find(x => x.index == index)?.image || IMAGE.imgBlock11} />
                     </motion.div>
                     <div><h2 className='title-case'>{item.category}</h2></div>
                     <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
@@ -399,7 +401,7 @@ class Home extends Component<IProps, IState> {
                       >
                         <Button type="default" shape="round" size="large" className='btn-case'>
                           <label>{item.cta}</label>&nbsp;&nbsp;
-                          <Image sizes='12' loading='lazy' preview={false} src={SVG.arrowUpRight} />
+                          <img alt='icon' loading='lazy' src={SVG.arrowUpRight} />
                         </Button>
                       </motion.div>
                     </div>
@@ -433,7 +435,7 @@ class Home extends Component<IProps, IState> {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <Button
-                      icon={<Image sizes='12' loading='lazy' preview={false} src={
+                      icon={<img loading='lazy' alt='icon' src={
                         iconMap.find(x => x.index == index)?.image || SVG.mountainsWhite
                       } />}
                       type="default"
@@ -454,7 +456,14 @@ class Home extends Component<IProps, IState> {
           {/* Map */}
           <Row {...globalProps.row12 as any} className='txt-center'>
             <Col span={24}>
-              <div className="map-container" onClick={(e) => this.onClickMap()}>
+              <motion.div
+                className="map-container"
+                onClick={(e) => this.onClickMap()}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
                 <div
                   className="map-wrapper"
                   style={{
@@ -473,11 +482,11 @@ class Home extends Component<IProps, IState> {
                       style={{ top: loc.y, left: loc.x }}
                       onClick={(e) => this.onClickMarker(e, loc)}
                     >
-                      <img src={loc.image} width={32} className='marker-img' loading='lazy' />
+                      <img src={loc.image} width={32} className='marker-img' loading='lazy' alt='icon' />
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </Col>
           </Row>
         </div>
@@ -628,12 +637,12 @@ class Home extends Component<IProps, IState> {
                     <motion.div
                       className='bloc-3-cases'
                       key={index}
-                      initial={{ opacity: 0, x: 200 }}
+                      initial={{ opacity: 0, x: 100 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7 }}
                       viewport={{ once: true }}
                     >
-                      <img className='image' loading='lazy' src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31} />
+                      <img className='image' loading='lazy' alt='image' src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31} />
                       <div><h2 className='title-case'>{item.category}</h2></div>
                       <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
                       <div className='box-des'><p className='description-case'>{item.description}</p></div>
@@ -727,7 +736,7 @@ class Home extends Component<IProps, IState> {
           <Row {...globalProps.row12 as any} className='row-inside'>
             <Col {...globalProps.colFull as any}>
               <div className='bg-image'>
-                <img loading='lazy' src={IMAGE.bgLafamille} />
+                <img loading='lazy' src={IMAGE.bgLafamille} alt='image' />
               </div>
 
               <motion.div
@@ -737,7 +746,7 @@ class Home extends Component<IProps, IState> {
                 transition={{ duration: 3 }}
                 viewport={{ once: true }}
               >
-                <img loading='lazy' src={IMAGE.familleInside} />
+                <img loading='lazy' src={fruitActive} alt='image' />
                 <div className='title-inside'>
                   <h2>La famille</h2>
                   <p>24 Sep 2024</p>
@@ -763,14 +772,20 @@ class Home extends Component<IProps, IState> {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
-                    <img loading="lazy" src={socialMediaCard.find(x => x.index == index)?.image} />
+                    <img loading="lazy"
+                      src={socialMediaCard.find(x => x.index == index)?.image}
+                      alt='image'
+                      onClick={() => this.setState({
+                        fruitActive: socialMediaCard.find(x => x.index == index)?.image || IMAGE.familleInside
+                      })}
+                    />
                   </motion.div>
 
                   <motion.div
                     className="text-inside"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <img loading="lazy" src={IMAGE.mdiInstagram} />
+                    <img loading="lazy" src={IMAGE.mdiInstagram} alt='image' />
                     <motion.label
                       className="author"
                       whileHover={{ color: "#f2542d" }}
@@ -802,7 +817,7 @@ class Home extends Component<IProps, IState> {
           <Row {...globalProps.row12 as any} className='txt-center'>
             <Col span={24}>
               <div className='bg-image-discover'>
-                <Image loading='lazy' src={IMAGE.imageDiscover} preview={false} />
+                <img loading='lazy' src={IMAGE.imageDiscover} />
               </div>
               <div className='content-discover'>
                 <div>
@@ -855,9 +870,9 @@ class Home extends Component<IProps, IState> {
           <div className='display-footer'>
             <div><p> © BASIC 2024</p></div>
             <div className='social-media'>
-              <Image loading='lazy' src={IMAGE.fb} preview={false} />
-              <Image loading='lazy' src={IMAGE.ins} preview={false} />
-              <Image loading='lazy' src={IMAGE.ytb} preview={false} />
+              <img loading='lazy' src={IMAGE.fb} alt='logo-social' />
+              <img loading='lazy' src={IMAGE.ins} alt='logo-social' />
+              <img loading='lazy' src={IMAGE.ytb} alt='logo-social' />
             </div>
           </div>
 

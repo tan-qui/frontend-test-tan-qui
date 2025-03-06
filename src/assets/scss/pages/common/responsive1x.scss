@@ -7,10 +7,15 @@
 
         .sub-menu {
             display: none;
-            display: flex;
             justify-content: center;
             align-items: center;
+
+            .btn-send {
+                display: none;
+            }
         }
+
+
 
         .btn-send-icon {
             display: none;

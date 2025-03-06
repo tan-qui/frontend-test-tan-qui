@@ -10,7 +10,14 @@
 
         .sub-menu {
             display: none;
+
+            .btn-send {
+                display: flex;
+                border: none
+            }
         }
+
+
 
         .right-menu {
             .collapsed {
