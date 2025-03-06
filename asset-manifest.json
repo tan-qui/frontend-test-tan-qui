@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-test-tan-qui/static/css/main.38431bd4.css",
-    "main.js": "/frontend-test-tan-qui/static/js/main.4e884dfa.js",
+    "main.css": "/frontend-test-tan-qui/static/css/main.e02ad84b.css",
+    "main.js": "/frontend-test-tan-qui/static/js/main.6377fe65.js",
     "static/media/moblie-hero-image.mov": "/frontend-test-tan-qui/static/media/moblie-hero-image.b1d49ccd25e31abf41b4.mov",
     "static/media/pc-hero-image.mov": "/frontend-test-tan-qui/static/media/pc-hero-image.b1d49ccd25e31abf41b4.mov",
     "static/media/tablet-hor-hero-image.mov": "/frontend-test-tan-qui/static/media/tablet-hor-hero-image.b1d49ccd25e31abf41b4.mov",
@@ -46,11 +46,11 @@
     "static/media/arrow-right.svg": "/frontend-test-tan-qui/static/media/arrow-right.02d7c313dcc9ddc7820c9deb281939c7.svg",
     "static/media/arrow-left.svg": "/frontend-test-tan-qui/static/media/arrow-left.9ffc71bb598f7494bd182ff8ff6bb672.svg",
     "static/media/fr.svg": "/frontend-test-tan-qui/static/media/fr.426e479b06ed2c02b1c640c9bb85b17c.svg",
-    "main.38431bd4.css.map": "/frontend-test-tan-qui/static/css/main.38431bd4.css.map",
-    "main.4e884dfa.js.map": "/frontend-test-tan-qui/static/js/main.4e884dfa.js.map"
+    "main.e02ad84b.css.map": "/frontend-test-tan-qui/static/css/main.e02ad84b.css.map",
+    "main.6377fe65.js.map": "/frontend-test-tan-qui/static/js/main.6377fe65.js.map"
   },
   "entrypoints": [
-    "static/css/main.38431bd4.css",
-    "static/js/main.4e884dfa.js"
+    "static/css/main.e02ad84b.css",
+    "static/js/main.6377fe65.js"
   ]
 }
