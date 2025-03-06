@@ -3,6 +3,7 @@
     .app-header {
         .center-menu {
             display: none;
+            
         }
 
         .sub-menu {
@@ -142,7 +143,7 @@
         padding-left: 0px;
         max-width: 300px;
     }
-    
+
     .screen-home .bloc-4 .title-bloc-4 {
         font-size: 24px;
     }
@@ -199,9 +200,13 @@
         height: 161px;
     }
 
-    .screen-home .bloc-2-2 .card-calendar .row-customer-header-calendar img{
+    .screen-home .bloc-2-2 .card-calendar .row-customer-header-calendar img {
         height: 16px;
         width: 16px;
+    }
+
+    .screen-home .bloc-5 .row-inside .card-inside {
+        width: 80%;
     }
 
     .btn-confirm {

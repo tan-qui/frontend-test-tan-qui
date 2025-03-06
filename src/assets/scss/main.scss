@@ -18,23 +18,23 @@
 @import "./pages/common/responsive4x.scss";
 @import "./pages/common/responsive5x.scss";
 
-// @font-face {
-//   font-family: Roboto;
-//   src: url(../fonts/Roboto-Regular.ttf) format("truetype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: Roboto;
-//   src: url(../fonts/Roboto-Bold.ttf) format("truetype");
-//   font-weight: bold;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
 
 * {
-  // font-family: "Roboto";
-  font-family: Poppins;
+  font-family: "Roboto";
+  // font-family: Poppins;
   margin: 0;
   padding: 0;
   border: 0;
@@ -42,8 +42,8 @@
 
 body,
 html {
-  // font-family: Roboto;
-  font-family: Poppins;
+  font-family: Roboto;
+  // font-family: Poppins;
   font-size: 14px;
   scroll-behavior: smooth;
   background: #fff;

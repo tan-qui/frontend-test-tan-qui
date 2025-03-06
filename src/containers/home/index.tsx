@@ -122,7 +122,7 @@ interface IState {
   currentDate: any,
   locations: any[],
   lstBooking: any[],
-  fruitActive: string,
+  fruitActive: any,
 };
 
 class Home extends Component<IProps, IState> {
@@ -138,7 +138,12 @@ class Home extends Component<IProps, IState> {
       currentDate: dayjs("2025-01-01"),
       locations: fakeLocations,
       lstBooking: [],
-      fruitActive: IMAGE.familleInside,
+      fruitActive: {
+        title: "La famille",
+        date: "24 Sep 2024",
+        image: IMAGE.familleInside,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      },
     };
   }
 
@@ -264,7 +269,7 @@ class Home extends Component<IProps, IState> {
           backgroundColor: backgroundColor,
           color: color,
         }}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 200 }}
       >
         {value.format("D")}
@@ -654,19 +659,16 @@ class Home extends Component<IProps, IState> {
                     <motion.div
                       className='bloc-3-cases'
                       key={index}
-                      initial={{ opacity: 0, x: 100 }}
+                      initial={{ opacity: 0, x: 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7 }}
                       viewport={{ once: true }}
                     >
-                      <motion.img
+                      <img
                         className='image'
                         loading='lazy'
                         alt='image'
                         src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31}
-                        // whileHover={{ scale: 5 }}
-                        whileTap={{ scale: 5 }}
-                        transition={{ type: "spring", stiffness: 200 }}
                       />
                       <div><h2 className='title-case'>{item.category}</h2></div>
                       <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
@@ -761,7 +763,7 @@ class Home extends Component<IProps, IState> {
           <Row {...globalProps.row12 as any} className='row-inside'>
             <Col {...globalProps.colFull as any}>
               <div className='bg-image'>
-                <img loading='lazy' src={IMAGE.bgLafamille} alt='image' />
+                <img loading='lazy' src={fruitActive?.image} alt='image' />
               </div>
 
               <motion.div
@@ -771,13 +773,13 @@ class Home extends Component<IProps, IState> {
                 transition={{ duration: 3 }}
                 viewport={{ once: true }}
               >
-                <img loading='lazy' src={fruitActive} alt='image' />
+                <img loading='lazy' src={fruitActive?.image} alt='image' />
                 <div className='title-inside'>
-                  <h2>La famille</h2>
-                  <p>24 Sep 2024</p>
+                  <h2>{fruitActive.title}</h2>
+                  <p>{fruitActive.date}</p>
                 </div>
                 <div className='des-inside'>
-                  <span className='des'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+                  <span className='des'>{fruitActive.description}</span>
                 </div>
               </motion.div>
             </Col>
@@ -794,7 +796,7 @@ class Home extends Component<IProps, IState> {
                 >
                   <motion.div
                     className="image-review"
-                    whileHover={{ scale: 1.5 }}
+                    whileHover={{ scale: 0.7 }}
                     transition={{ type: "spring", stiffness: 200 }}
                     viewport={{ once: true }}
                   >
@@ -802,7 +804,12 @@ class Home extends Component<IProps, IState> {
                       src={socialMediaCard.find(x => x.index == index)?.image}
                       alt='image'
                       onClick={() => this.setState({
-                        fruitActive: socialMediaCard.find(x => x.index == index)?.image || IMAGE.familleInside
+                        fruitActive: {
+                          title: item.author,
+                          date: item.date,
+                          image: socialMediaCard.find(x => x.index == index)?.image || IMAGE.familleInside,
+                          description: item.review
+                        }
                       })}
                     />
                   </motion.div>

@@ -65,6 +65,7 @@ class AppHeader extends Component<IProps, IState> {
                   style={{ color: isActive ? '#F2542D' : '#fff' }}
                   animate={{ scale: isActive ? 1.2 : 1 }}
                   transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.2, color: '#F2542D' }}
                 >
                   {item}
                 </motion.label>

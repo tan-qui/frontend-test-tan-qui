@@ -20,10 +20,15 @@
 
 .center-menu {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 
   label {
     color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      color: #f2542d;
+    }
   }
 }
 
