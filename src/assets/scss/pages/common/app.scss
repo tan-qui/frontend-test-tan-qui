@@ -1,0 +1,51 @@
+.ant-layout-sider {
+  overflow: auto;
+  height: 100vh;
+
+  .logo {
+    text-align: center;
+
+    img {
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+}
+
+.ant-layout-header{
+  background: rgba(86, 44, 44, .7);
+}
+
+.ant-layout-content {
+  overflow: initial;
+  background: #fff;
+  min-height: calc(100vh - 50px - 70px);
+}
+
+.ant-layout-footer {
+  color: #fff;
+  .ant-row {
+    justify-content: space-around,
+  }
+}
+
+.ant-input-filled {
+  background: rgb(10 134 23 / 20%);
+}
+
+.ant-select-filled {
+  background: rgb(10 134 23 / 20%);
+  border-radius: 6px;
+}
+
+.ant-input-number-filled {
+  background: rgb(10 134 23 / 20%);
+}
+
+.ant-picker-filled {
+  background: rgb(10 134 23 / 20%);
+}
+
+.ant-avatar {
+  border: 1px solid #fff;
+}

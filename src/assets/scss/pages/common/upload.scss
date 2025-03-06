@@ -1,0 +1,27 @@
+.screen-home {
+  .file-upload {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    color: #007bff;
+  }
+
+  .file-upload .text {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .file-upload .text:hover {
+    text-decoration: underline;
+  }
+
+  .file-upload input {
+    display: none;
+  }
+
+  .file-upload .hint {
+    color: #999;
+  }
+}

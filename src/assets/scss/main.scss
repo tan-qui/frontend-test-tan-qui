@@ -1,0 +1,58 @@
+@import "antd/dist/reset.css";
+@import "./pages/common/app.scss";
+@import "./pages/common/base.scss";
+@import "./pages/common/custom-form-item.scss";
+@import "./pages/common/page-common-error.scss";
+@import "./pages/common/header.scss";
+@import "./pages/common/loading.scss";
+@import "./pages/common/custom-modal.scss";
+@import "./pages/common/min-with.scss";
+@import "./pages/common/padding.scss";
+@import "./pages/common/upload.scss";
+@import "./pages/screen/screen-home.scss";
+
+
+@import "./pages/common/responsive1x.scss";
+@import "./pages/common/responsive2x.scss";
+@import "./pages/common/responsive3x.scss";
+@import "./pages/common/responsive4x.scss";
+@import "./pages/common/responsive5x.scss";
+
+// @font-face {
+//   font-family: Roboto;
+//   src: url(../fonts/Roboto-Regular.ttf) format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: Roboto;
+//   src: url(../fonts/Roboto-Bold.ttf) format("truetype");
+//   font-weight: bold;
+//   font-style: normal;
+// }
+
+* {
+  // font-family: "Roboto";
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body,
+html {
+  // font-family: Roboto;
+  font-family: Poppins;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  background: #fff;
+}
+
+h1,
+h2,
+h3,
+label,
+p {
+  color: #562C2C;
+}

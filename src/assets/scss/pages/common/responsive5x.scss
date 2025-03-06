@@ -1,0 +1,210 @@
+/* PC */
+@media screen and (min-width: 1280px) {
+    .app-header {
+
+        height: 72px;
+        line-height: 72px;
+
+        .center-menu {
+            display: flex;
+        }
+
+        .sub-menu {
+            display: flex;
+
+            img {
+                width: 28px;
+            }
+
+        }
+
+        .right-menu {
+            .collapsed {
+                display: none;
+            }
+        }
+
+        .center-menu label {
+            font-size: x-large;
+        }
+    }
+
+    .date-cell-calendar {
+        text-align: center;
+        margin: 5px;
+        height: 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 8px;
+
+        .text-cell-calendar {
+            display: block;
+        }
+    }
+
+    .screen-home .title-bloc {
+        font-size: 52px;
+        white-space: break-spaces;
+    }
+
+    .screen-home .sub-title-bloc {
+        font-size: 24px;
+    }
+
+    .screen-home .title-case {
+        font-size: 20px;
+    }
+
+    .screen-home .sub-title-case {
+        font-size: 28px;
+    }
+
+    .screen-home .title-bloc-5 {
+        font-size: 40px;
+    }
+
+    .screen-home .text-bloc-5 {
+        font-size: 18px;
+    }
+
+    .screen-home .title-discover {
+        font-size: 52px;
+    }
+
+    .screen-home .sub-title-discover {
+        font-size: 52px;
+    }
+
+    .screen-home .text-discover {
+        font-size: 24px;
+    }
+
+
+    .screen-home .bloc-3 .title-bloc-3 h2 {
+        font-size: 48px;
+    }
+
+    .screen-home .bloc-3 .more-info-bloc-3 label {
+        font-size: 20px;
+    }
+
+    .screen-home {
+
+        .bloc-1,
+        .bloc-2,
+        .bloc-2-2,
+        .bloc-3,
+        .bloc-4 {
+            padding: 2rem 15%;
+        }
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .image {
+        height: 397px;
+    }
+
+
+    .screen-home .bloc-3 .bloc-3-cases-container {
+        padding-left: 12% !important;
+    }
+
+    .screen-home .bloc-3 {
+        .box-des {
+            width: 300px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+
+            .description-case {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 24px;
+                padding-left: 36px;
+                border-left: 1px solid #BBBBBB;
+                white-space: break-spaces;
+            }
+        }
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .image {
+        height: 340px;
+    }
+
+
+    .screen-home .bloc-4 .text-bloc-4 {
+        padding-left: 120px;
+        max-width: 700px;
+    }
+
+    .screen-home .bloc-4 .title-bloc-4 {
+        font-size: 48px;
+    }
+
+    .screen-home .bloc-4 .text-title-bloc-4 {
+        font-size: 28px;
+    }
+
+    .screen-home .bloc-4 .sub-title-bloc-4 {
+        font-size: 18px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-container {
+        position: unset;
+
+        .bloc-4-text {
+            position: unset;
+            padding: 0px;
+            width: 60%;
+            -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
+        }
+
+        .bloc-4-image {
+            img {
+                border-radius: 8px;
+                height: 574px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .screen-home .bloc-4 {
+        .icon-tilte h2 {
+            font-size: 24px;
+        }
+
+        .icon-des span {
+            font-size: 18px;
+        }
+    }
+
+
+    .screen-home .bloc-5 {
+        padding: 2rem 15%;
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .even {
+        padding-top: 50px;
+    }
+
+    .screen-home .bloc-5 .row-inside .bg-image img {
+        height: 694px;
+    }
+
+    .screen-home .bloc-5 .review-container .image-review img {
+        height: 292px;
+    }
+
+    .btn-confirm {
+        width: 200px;
+        height: 48px;
+    }
+
+    .btn-reset {
+        width: 200px;
+        height: 48px;
+    }
+}

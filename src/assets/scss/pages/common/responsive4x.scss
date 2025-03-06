@@ -1,0 +1,238 @@
+/*Máy tính bảng (Ngang)*/
+@media screen and (min-width: 1024px) {
+    .app-header {
+
+        height: 72px;
+        line-height: 72px;
+
+        .center-menu {
+            display: flex;
+        }
+
+        .sub-menu {
+            display: flex;
+
+            img {
+                width: 24px;
+            }
+        }
+
+        .right-menu {
+            .collapsed {
+                display: none;
+            }
+        }
+
+        .center-menu label {
+            font-size: larger;
+        }
+    }
+
+    .screen-home .main-banner .row-icon-banner .image-container .hover-image {
+        width: 32px;
+        height: 32px;
+    }
+
+    .screen-home .main-banner .icon-chat {
+        bottom: 40px;
+        right: 24px;
+        height: 56px;
+        width: 56px;
+
+        .hover-image {
+            height: 32px;
+        }
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .even {
+        padding-top: 45px;
+    }
+
+    .date-cell-calendar {
+        text-align: center;
+        margin: 5px;
+        height: 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 8px;
+
+        .text-cell-calendar {
+            display: block;
+        }
+    }
+
+    .screen-home .bloc-3 .title-bloc-3 .more-info-bloc-3 {
+        display: block;
+        min-width: 160px;
+        display: flex;
+    }
+
+    .screen-home .title-bloc {
+        font-size: 40px;
+        white-space: breal-spaces;
+    }
+
+    .screen-home .sub-title-bloc {
+        font-size: 20px;
+    }
+
+    .screen-home .title-case {
+        font-size: 18px;
+    }
+
+    .screen-home .sub-title-case {
+        font-size: 24px;
+    }
+
+    .screen-home .title-bloc-5 h2 {
+        font-size: 48px;
+    }
+
+    .screen-home .text-bloc-5 p {
+        font-size: 16px;
+    }
+
+    .screen-home .title-discover {
+        font-size: 40px;
+    }
+
+    .screen-home .sub-title-discover {
+        font-size: 40px;
+    }
+
+    .screen-home .text-discover {
+        font-size: 20px;
+    }
+
+    .screen-home .bloc-3 .title-bloc-3 h2 {
+        font-size: 40px;
+    }
+
+    .screen-home .bloc-3 .more-info-bloc-3 label {
+        font-size: 20px;
+    }
+
+    .screen-home {
+
+        .bloc-1,
+        .bloc-2,
+        .bloc-2-2,
+        .bloc-3,
+        .bloc-4 {
+            padding: 2rem 10%;
+        }
+
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .image {
+        height: 355px;
+    }
+
+
+    .screen-home .bloc-3 .bloc-3-cases-container {
+        padding-left: 10% !important;
+    }
+
+    .screen-home .bloc-3 {
+        .box-des {
+            width: 300px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+
+            .description-case {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 24px;
+                padding-left: 32px;
+                border-left: 1px solid #BBBBBB;
+                white-space: break-spaces;
+            }
+        }
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .image {
+        height: 340px;
+    }
+
+    .screen-home .bloc-4 .text-bloc-4 {
+        padding-left: 70px;
+        max-width: 700px;
+    }
+
+    .screen-home .bloc-4 .title-bloc-4 {
+        font-size: 40px;
+    }
+
+    .screen-home .bloc-4 .text-title-bloc-4 {
+        font-size: 24px;
+    }
+
+    .screen-home .bloc-4 .sub-title-bloc-4 {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-container {
+        position: unset;
+
+        .bloc-4-text {
+            position: unset;
+            padding: 0px;
+            width: 70%;
+            -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
+        }
+
+        .bloc-4-image {
+            img {
+                border-radius: 8px;
+                height: 400px;
+            }
+        }
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .icon-tilte h2 {
+        font-size: 20px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .icon-des span {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .icon-des {
+        max-width: 140px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .image {
+        height: 56px;
+    }
+
+    .screen-home .bloc-5 {
+        padding: 2rem;
+    }
+
+    .screen-home .bloc-5 .row-inside .card-inside .des-inside span {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-5 .row-inside .bg-image img {
+        height: 694px;
+    }
+
+    .screen-home .bloc-5 .review-container .image-review img {
+        height: 260px;
+    }
+
+    .btn-confirm {
+        width: 160px;
+        height: 40px;
+    }
+
+    .btn-reset {
+        width: 160px;
+        height: 40px;
+    }
+}

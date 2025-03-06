@@ -1,0 +1,84 @@
+.app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+
+}
+
+.left-menu {
+  strong {
+    color: #fff;
+  }
+}
+
+.center-menu {
+  display: flex;
+  gap: 2rem;
+
+  label {
+    color: #fff;
+  }
+}
+
+
+.sub-menu {
+  display: flex;
+  gap: 2rem;
+
+  label {
+    color: #fff;
+  }
+
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+
+  .collapsed {
+    button {
+      color: #fff;
+    }
+  }
+
+  .select-lang {
+    width: 65px;
+  }
+
+}
+
+
+
+
+.drawer-menu {
+
+  .ant-menu {
+    height: 100%;
+  }
+
+  .ant-drawer-body {
+    padding: 0;
+  }
+
+  .ant-drawer-header {
+    padding: 12px 0px;
+
+    .logo {
+      text-align: center;
+
+      img {
+        height: 64px;
+        object-fit: contain;
+      }
+    }
+  }
+}

@@ -1,0 +1,259 @@
+/*Máy tính bảng (Dọc)*/
+@media screen and (min-width: 768px) {
+    .app-header {
+        height: 60px;
+        line-height: 60px;
+
+        .center-menu {
+            display: flex;
+        }
+
+        .sub-menu {
+            display: none;
+        }
+
+        .right-menu {
+            .collapsed {
+                display: none;
+            }
+
+            .select-lang {
+                width: 100px;
+            }
+        }
+
+        .center-menu label {
+            font-size: larger;
+        }
+
+    }
+
+    .screen-home .main-banner .row-icon-banner .image-container .hover-image {
+        width: 32px;
+        height: 32px;
+    }
+
+    .screen-home .main-banner .icon-chat {
+        bottom: 40px;
+        right: 24px;
+        height: 56px;
+        width: 56px;
+
+        .hover-image {
+            height: 32px;
+        }
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .even {
+        padding-top: 32px;
+    }
+
+    .screen-home .bloc-2-2 .bloc-2-2-form .btn-submit-container {
+        justify-content: flex-end;
+    }
+
+    .screen-home .bloc-3 .title-bloc-3 h2 {
+        text-align: start;
+    }
+
+    .screen-home .bloc-3 .title-bloc-3 .more-info-bloc-3 {
+        display: block;
+        min-width: 120px;
+    }
+
+    .screen-home .btn-learn-more-container {
+        display: none;
+    }
+
+
+    .date-cell-calendar {
+        text-align: center;
+        margin: 5px;
+        height: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 8px;
+
+        .text-cell-calendar {
+            display: block;
+        }
+    }
+
+    .screen-home .title-bloc {
+        font-size: 32px;
+        max-width: unset;
+        white-space: break-spaces;
+    }
+
+    .screen-home .sub-title-bloc {
+        font-size: 18px;
+    }
+
+    .screen-home .title-case {
+        font-size: 16px;
+    }
+
+    .screen-home .sub-title-case {
+        font-size: 20px;
+    }
+
+    .screen-home .title-bloc-5 h2 {
+        font-size: 24px;
+    }
+
+    .screen-home .text-bloc-5 p {
+        font-size: 16px;
+    }
+
+    .screen-home .title-discover {
+        font-size: 32px;
+    }
+
+    .screen-home .sub-title-discover {
+        font-size: 32px;
+    }
+
+    .screen-home .text-discover {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-3 .title-bloc-3 h2 {
+        font-size: 32px;
+    }
+
+    .screen-home .bloc-3 .more-info-bloc-3 label {
+        font-size: 16px;
+    }
+
+    .screen-home {
+
+        .bloc-1,
+        .bloc-2,
+        .bloc-2-2,
+        .bloc-3,
+        .bloc-4 {
+            padding: 2rem 7%;
+        }
+
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .image {
+        height: 240px;
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container {
+        padding-left: 7% !important;
+    }
+
+    .screen-home .bloc-3 {
+        .box-des {
+            width: 300px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+
+            .description-case {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 24px;
+                padding-left: 24px;
+                border-left: 1px solid #BBBBBB;
+                white-space: break-spaces;
+            }
+        }
+    }
+
+    .screen-home .bloc-4 .text-bloc-4 {
+        padding-left: 50px;
+        max-width: 500px;
+    }
+
+    .screen-home .bloc-4 .title-bloc-4 {
+        font-size: 32px;
+    }
+
+    .screen-home .bloc-4 .text-title-bloc-4 {
+        font-size: 20px;
+    }
+
+    .screen-home .bloc-4 .sub-title-bloc-4 {
+        font-size: 14px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-container {
+        position: unset;
+
+        .bloc-4-text {
+            position: unset;
+            padding: 0px;
+            width: 50%;
+            -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
+        }
+
+        .bloc-4-image {
+            img {
+                border-radius: 8px;
+                height: 400px;
+            }
+        }
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .image {
+        height: 280px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .icon-tilte h2 {
+        font-size: 18px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .icon-des span {
+        font-size: 14px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .icon-des {
+        max-width: 200px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-cases-container .image {
+        height: 44px;
+    }
+
+    .screen-home .bloc-5 .row-inside .card-inside .des-inside span {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-5 .review-container .text-inside img {
+        height: 24px;
+        width: 24px;
+    }
+
+    .screen-home .bloc-5 .review-container .text-inside label {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-5 {
+        padding: 2rem;
+    }
+
+    .screen-home .bloc-5 .row-inside .bg-image img {
+        height: 472px;
+    }
+
+    .screen-home .bloc-5 .review-container .image-review img {
+        height: 260px;
+    }
+
+    .btn-confirm {
+        width: 160px;
+        height: 40px;
+    }
+
+    .btn-reset {
+        width: 160px;
+        height: 40px;
+    }
+}

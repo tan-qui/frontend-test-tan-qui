@@ -1,0 +1,201 @@
+/*Điện thoại di động: iPhone 16 PRO Max */
+@media screen and (min-width: 414px) {
+    .app-header {
+        .center-menu {
+            display: none;
+        }
+
+        .sub-menu {
+            display: none;
+        }
+
+        .right-menu {
+            .collapsed {
+                display: flex;
+            }
+        }
+
+        .center-menu label{
+            font-size: small;
+        }
+    }
+
+    .date-cell-calendar {
+        text-align: center;
+        margin: 5px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 8px;
+
+        .text-cell-calendar {
+            display: none;
+        }
+    }
+
+    .screen-home .title-bloc {
+        font-size: 24px;
+        max-width: 300px;
+        white-space: break-spaces;
+    }
+
+    .screen-home .sub-title-bloc {
+        font-size: 14px;
+    }
+
+    .screen-home .title-case {
+        font-size: 12px;
+    }
+
+    .screen-home .sub-title-case {
+        font-size: 16px;
+    }
+
+    .screen-home .title-bloc-5 h2 {
+        font-size: 24px;
+    }
+
+    .screen-home .text-bloc-5 p {
+        font-size: 14px;
+    }
+
+    .screen-home .title-discover {
+        font-size: 24px;
+    }
+
+    .screen-home .sub-title-discover {
+        font-size: 24px;
+    }
+
+    .screen-home .text-discover {
+        font-size: 14px;
+    }
+
+    .screen-home {
+
+        .bloc-1,
+        .bloc-2,
+        .bloc-2-2,
+        .bloc-3,
+        .bloc-4 {
+            padding: 2rem 4%;
+        }
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .image {
+        height: 200px;
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container {
+        padding-left: 5% !important;
+    }
+
+    .screen-home .bloc-3 {
+        .box-des {
+            width: 300px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+
+            .description-case {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 14px;
+                line-height: 24px;
+                padding-left: 10px;
+                border-left: 1px solid #BBBBBB;
+                white-space: break-spaces;
+            }
+        }
+    }
+
+    .screen-home .bloc-3 .title-bloc-3 h2 {
+        font-size: 24px;
+    }
+
+    .screen-home .bloc-3 .more-info-bloc-3 label {
+        font-size: 14px;
+    }
+
+
+    .screen-home .bloc-4 .text-bloc-4 {
+        padding-left: 0px;
+        max-width: 300px;
+    }
+
+    .screen-home .bloc-4 .title-bloc-4 {
+        font-size: 24px;
+    }
+
+    .screen-home .bloc-4 .text-title-bloc-4 {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-4 .sub-title-bloc-4 {
+        font-size: 14px;
+    }
+
+    .screen-home .bloc-4 .bloc-4-container {
+        position: relative;
+
+        .bloc-4-text {
+            position: absolute;
+            z-index: 99;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.60);
+            backdrop-filter: blur(7.5px);
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            padding: 20px;
+        }
+    }
+
+    .screen-home .bloc-4 {
+        .icon-tilte h2 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .icon-des span {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .screen-home .bloc-5 {
+        padding: 2rem;
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .image {
+        height: 200px;
+    }
+
+    .screen-home .bloc-1 .bloc-1-cases-container .even {
+        padding-top: 0px;
+    }
+
+    .screen-home .bloc-5 .review-container .text-inside label {
+        font-size: 16px;
+    }
+
+    .screen-home .bloc-5 .row-inside .bg-image img {
+        height: 356px;
+    }
+
+    .screen-home .bloc-5 .review-container .image-review img {
+        height: 161px;
+    }
+
+    .btn-confirm {
+        width: 120px;
+        height: 40px;
+    }
+
+    .btn-reset {
+        width: 120px;
+        height: 40px;
+    }
+}
