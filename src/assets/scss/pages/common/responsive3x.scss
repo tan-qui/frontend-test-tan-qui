@@ -157,7 +157,6 @@
 
     .screen-home .bloc-3 {
         .box-des {
-            width: 300px;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
@@ -171,6 +170,10 @@
                 white-space: break-spaces;
             }
         }
+    }
+
+    .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .box-des {
+        width: 300px;
     }
 
     .screen-home .bloc-4 .text-bloc-4 {
@@ -252,6 +255,11 @@
 
     .screen-home .bloc-5 .review-container .image-review img {
         height: 260px;
+    }
+
+    .screen-home .bloc-2-2 .card-calendar .row-customer-header-calendar img{
+        height: 24px;
+        width: 24px;
     }
 
     .btn-confirm {

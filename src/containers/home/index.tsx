@@ -29,6 +29,13 @@ dayjs.extend(localeData);
 dayjs.extend(weekday)
 dayjs.locale("fr");
 
+
+const iconBanner = [
+  { index: 0, image: SVG.mountainsWhite },
+  { index: 1, image: SVG.fishingWhite },
+  { index: 2, image: SVG.crosshairWhite },
+];
+
 const iconMap = [
   { index: 0, image: SVG.mountainsBlack },
   { index: 1, image: SVG.fishingBlack },
@@ -71,17 +78,17 @@ const socialMediaCard = [
 ];
 
 const fakeLocations = [
-  { id: 1, type: 1, x: "10%", y: "40%", image: IMAGE.crosshairMappin },
+  { id: 1, type: 1, x: "10%", y: "40%", image: IMAGE.mountainMappin },
   { id: 2, type: 2, x: "25%", y: "55%", image: IMAGE.fishingMappin },
-  { id: 3, type: 3, x: "30%", y: "20%", image: IMAGE.mountainMappin },
+  { id: 3, type: 3, x: "30%", y: "20%", image: IMAGE.crosshairMappin },
 
-  { id: 4, type: 1, x: "35%", y: "88%", image: IMAGE.crosshairMappin },
+  { id: 4, type: 1, x: "35%", y: "88%", image: IMAGE.mountainMappin },
   { id: 5, type: 2, x: "40%", y: "70%", image: IMAGE.fishingMappin },
-  { id: 6, type: 3, x: "45%", y: "20%", image: IMAGE.mountainMappin },
+  { id: 6, type: 3, x: "45%", y: "20%", image: IMAGE.crosshairMappin },
 
-  { id: 7, type: 1, x: "50%", y: "35%", image: IMAGE.crosshairMappin },
+  { id: 7, type: 1, x: "50%", y: "35%", image: IMAGE.mountainMappin },
   { id: 8, type: 2, x: "55%", y: "27%", image: IMAGE.fishingMappin },
-  { id: 9, type: 3, x: "60%", y: "80%", image: IMAGE.mountainMappin },
+  { id: 9, type: 3, x: "60%", y: "80%", image: IMAGE.crosshairMappin },
 ];
 
 const occupiedDates = [
@@ -250,18 +257,20 @@ class Home extends Component<IProps, IState> {
     }
 
     return (
-      <div
+      <motion.div
         className='date-cell-calendar'
         style={{
           border: border,
           backgroundColor: backgroundColor,
           color: color,
         }}
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 200 }}
       >
         {value.format("D")}
         <br />
         <label className='text-cell-calendar'>{text}</label>
-      </div>
+      </motion.div>
     );
   };
 
@@ -334,23 +343,31 @@ class Home extends Component<IProps, IState> {
               muted
               playsInline
               src={VIDEO.pcHeroImage}
-            />
+            >
+              <track
+                kind="captions"
+                srcLang="en"
+                src={VIDEO.pcHeroImage}
+                default
+              />
+            </video>
           </div>
 
           <div className='row-icon-banner'>
             <div className='image-container'>
-              <div>
-                <img className='hover-image' loading='lazy' src={SVG.mountainsWhite} alt='icon' />
-                <h5>Activites 1</h5>
-              </div>
-              <div>
-                <img className='hover-image' loading='lazy' src={SVG.fishingWhite} alt='icon' />
-                <h5>Activites 2</h5>
-              </div>
-              <div>
-                <img className='hover-image' loading='lazy' src={SVG.crosshairWhite} alt='icon' />
-                <h5>Activites 3</h5>
-              </div>
+              {
+                dataFill.bloc_2?.cases?.map((item: any, index: number) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <img className='hover-image' loading='lazy' src={iconBanner.find(x => x.index == index)?.image || SVG.mountainsWhite} alt='icon' />
+                    <h5>{item}</h5>
+                  </motion.div>
+                ))
+              }
             </div>
           </div>
 
@@ -388,7 +405,7 @@ class Home extends Component<IProps, IState> {
                       whileTap={{ scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <img className='image' loading='lazy' alt='icon' src={imageBlock1.find(x => x.index == index)?.image || IMAGE.imgBlock11} />
+                      <img className='image' loading='eager' alt='icon' src={imageBlock1.find(x => x.index == index)?.image || IMAGE.imgBlock11} />
                     </motion.div>
                     <div><h2 className='title-case'>{item.category}</h2></div>
                     <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
@@ -642,7 +659,15 @@ class Home extends Component<IProps, IState> {
                       transition={{ duration: 0.7 }}
                       viewport={{ once: true }}
                     >
-                      <img className='image' loading='lazy' alt='image' src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31} />
+                      <motion.img
+                        className='image'
+                        loading='lazy'
+                        alt='image'
+                        src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31}
+                        // whileHover={{ scale: 5 }}
+                        whileTap={{ scale: 5 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      />
                       <div><h2 className='title-case'>{item.category}</h2></div>
                       <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
                       <div className='box-des'><p className='description-case'>{item.description}</p></div>
@@ -769,8 +794,9 @@ class Home extends Component<IProps, IState> {
                 >
                   <motion.div
                     className="image-review"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.5 }}
                     transition={{ type: "spring", stiffness: 200 }}
+                    viewport={{ once: true }}
                   >
                     <img loading="lazy"
                       src={socialMediaCard.find(x => x.index == index)?.image}
@@ -784,11 +810,13 @@ class Home extends Component<IProps, IState> {
                   <motion.div
                     className="text-inside"
                     whileHover={{ scale: 1.05 }}
+                    viewport={{ once: true }}
                   >
                     <img loading="lazy" src={IMAGE.mdiInstagram} alt='image' />
                     <motion.label
                       className="author"
                       whileHover={{ color: "#f2542d" }}
+                      viewport={{ once: true }}
                     >
                       {item.author}
                     </motion.label>
@@ -796,6 +824,7 @@ class Home extends Component<IProps, IState> {
                       loading="lazy"
                       src={SVG.arrowUpRightWhite}
                       whileHover={{ rotate: 15 }}
+                      viewport={{ once: true }}
                     />
                   </motion.div>
                 </motion.div>
@@ -856,7 +885,7 @@ class Home extends Component<IProps, IState> {
                 {dataFill.footer?.links?.map((item: any, index: number) => (
                   <Col key={index} {...globalProps.col as any}>
                     <motion.div
-                      whileTap={{ scale: 0.95 }}
+                      whileTap={{ scale: 0.7 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <p className='name'>{item.name}</p>
@@ -870,9 +899,27 @@ class Home extends Component<IProps, IState> {
           <div className='display-footer'>
             <div><p> © BASIC 2024</p></div>
             <div className='social-media'>
-              <img loading='lazy' src={IMAGE.fb} alt='logo-social' />
-              <img loading='lazy' src={IMAGE.ins} alt='logo-social' />
-              <img loading='lazy' src={IMAGE.ytb} alt='logo-social' />
+              <motion.img
+                loading='lazy'
+                src={IMAGE.fb}
+                alt='logo-social'
+                whileTap={{ scale: 0.5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+              <motion.img
+                loading='lazy'
+                src={IMAGE.ins}
+                alt='logo-social'
+                whileTap={{ scale: 0.5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+              <motion.img
+                loading='lazy'
+                src={IMAGE.ytb}
+                alt='logo-social'
+                whileTap={{ scale: 0.5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
             </div>
           </div>
 

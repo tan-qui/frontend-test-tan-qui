@@ -79,7 +79,7 @@
 
     .screen-home .title-bloc {
         font-size: 52px;
-        white-space: break-spaces;
+        white-space: unset;
     }
 
     .screen-home .sub-title-bloc {
@@ -161,6 +161,10 @@
         }
     }
 
+    .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .box-des {
+        width: 300px;
+    }
+
     .screen-home .bloc-3 .bloc-3-cases-container .bloc-3-cases .image {
         height: 340px;
     }
@@ -228,6 +232,11 @@
 
     .screen-home .bloc-5 .review-container .image-review img {
         height: 292px;
+    }
+
+    .screen-home .bloc-2-2 .card-calendar .row-customer-header-calendar img{
+        height: 24px;
+        width: 24px;
     }
 
     .btn-confirm {
