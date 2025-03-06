@@ -8,6 +8,7 @@ import { Header } from "antd/es/layout/layout";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import AppMenu from "../app-menu";
 import { SVG } from "../../assets/svg";
+import { motion } from 'framer-motion';
 
 
 const hardMenu = [
@@ -23,8 +24,9 @@ type IProps = LocalizeContextProps & {
 };
 
 interface IState {
-
   collapsed: boolean,
+  menuActive: string,
+  subMenuActive: string,
 };
 
 class AppHeader extends Component<IProps, IState> {
@@ -32,6 +34,8 @@ class AppHeader extends Component<IProps, IState> {
     super(props);
     this.state = {
       collapsed: false,
+      menuActive: "",
+      subMenuActive: "",
     }
   }
   onChangeCollapsed(value: boolean) {
@@ -52,19 +56,51 @@ class AppHeader extends Component<IProps, IState> {
 
           <div className="center-menu">
             {menu.map((item: any, index: number) => {
+              if (index == 4) return null;
+              const isActive = this.state.menuActive === item;
               return (
-                <label key={index}>{item}</label>
+                <motion.label
+                  key={index}
+                  onClick={() => this.setState({ menuActive: item })}
+                  style={{ color: isActive ? '#F2542D' : '#fff' }}
+                  animate={{ scale: isActive ? 1.2 : 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {item}
+                </motion.label>
               )
             })}
           </div>
+
           <div className="sub-menu">
             {hardMenu.map((item: any, index: number) => {
+              const isActive = this.state.subMenuActive === item.index;
               return (
-                <Image key={index} src={item.image} preview={false} />
+                <motion.div
+                  key={index}
+                  onClick={() => this.setState({ subMenuActive: item.index })}
+                  style={{ cursor: 'pointer' }}
+                  animate={{ scale: isActive ? 1.5 : 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image src={item.image} preview={false} />
+                </motion.div>
               )
             })}
-            <Image src={IMAGE.btnSend} preview={false} />
+            <Button
+              type="default"
+              shape="round"
+              className="btn-send"
+            >
+              <span>{menu?.length > 4 ? menu?.[4] : "Contactez-nous"}</span>
+              <img className="" src={SVG.arrowUpRightWhite} alt="btn-img" />
+            </Button>
           </div>
+          {/* <div className="btn-send-icon">
+            <span>{menu?.length > 4 ? menu?.[4] : "Contactez-nous"}</span>
+            <img src={SVG.arrowUpRightWhite} alt="btn-img" />
+          </div> */}
+
           <div className="right-menu">
             <div className="collapsed">
               <Button
@@ -74,15 +110,6 @@ class AppHeader extends Component<IProps, IState> {
                 onClick={() => this.onChangeCollapsed(!collapsed)}
               />
             </div>
-            {/* <Select
-              defaultValue={lang}
-              className="select-lang"
-              onChange={(e) => onChangeLang(e)}
-              options={[
-                { value: `${LangEnum.EN}`, label: `${LangEnum.EN.toUpperCase()}` },
-                { value: `${LangEnum.FR}`, label: `${LangEnum.FR.toUpperCase()}` },
-              ]}
-            /> */}
             {lang == LangEnum.FR && (
               <div className="lang-group">
                 <Image loading='lazy' onClick={() => onChangeLang(LangEnum.EN)} preview={false} src={SVG.fr} />
@@ -113,7 +140,7 @@ class AppHeader extends Component<IProps, IState> {
           open={collapsed}
           className="drawer-menu"
         >
-          <AppMenu mode="inline" />
+          <AppMenu mode="inline" menu={menu} collapsed={collapsed} />
         </Drawer>
 
       </React.Fragment>

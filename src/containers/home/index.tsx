@@ -21,6 +21,8 @@ import advancedFormat from 'dayjs/plugin/advancedFormat';
 import localeData from "dayjs/plugin/localeData";
 import weekday from 'dayjs/plugin/weekday';
 import { VIDEO } from '../../assets/video';
+import { motion } from 'framer-motion';
+
 dayjs.extend(customParseFormat)
 dayjs.extend(advancedFormat)
 dayjs.extend(localeData);
@@ -79,7 +81,7 @@ const fakeLocations = [
 
   { id: 7, type: 1, x: "50%", y: "35%", image: IMAGE.crosshairMappin },
   { id: 8, type: 2, x: "55%", y: "27%", image: IMAGE.fishingMappin },
-  { id: 9, type: 3, x: "60%", y: "90%", image: IMAGE.mountainMappin },
+  { id: 9, type: 3, x: "60%", y: "80%", image: IMAGE.mountainMappin },
 ];
 
 const occupiedDates = [
@@ -379,16 +381,29 @@ class Home extends Component<IProps, IState> {
               dataFill.bloc_1?.cases?.map((item: any, index: number) => {
                 return (
                   <Col key={index} {...globalProps.colImage as any} className={index % 2 === 0 ? 'even' : 'odd'}>
-                    <Image className='image' loading='lazy' src={imageBlock1.find(x => x.index == index)?.image || IMAGE.imgBlock11} preview={false} />
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <img className='image' loading='lazy' src={imageBlock1.find(x => x.index == index)?.image || IMAGE.imgBlock11} />
+                    </motion.div>
                     <div><h2 className='title-case'>{item.category}</h2></div>
                     <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
                     <div className='box-des'><p className='description-case'>{item.description}</p></div>
                     <div>
-                      <Button type="default" shape="round" size="large" className='btn-case'>
-                        <label>{item.cta}</label>&nbsp;&nbsp;
-                        <Image sizes='12' loading='lazy' preview={false} src={SVG.arrowUpRight} />
-                      </Button>
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Button type="default" shape="round" size="large" className='btn-case'>
+                          <label>{item.cta}</label>&nbsp;&nbsp;
+                          <Image sizes='12' loading='lazy' preview={false} src={SVG.arrowUpRight} />
+                        </Button>
+                      </motion.div>
                     </div>
+
                   </Col>
                 );
               })
@@ -412,19 +427,25 @@ class Home extends Component<IProps, IState> {
             {
               dataFill.bloc_2?.cases?.map((item: string, index: number) => {
                 return (
-                  <Button
-                    icon={<Image sizes='12' loading='lazy' preview={false} src={
-                      iconMap.find(x => x.index == index)?.image || SVG.mountainsWhite
-                    } />}
-                    type="default"
-                    shape="round"
-                    size="large"
-                    className='btn-case'
-                    key={index}
-                    onClick={() => { this.onFilterLocation(index) }}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <label>{item}</label>
-                  </Button>
+                    <Button
+                      icon={<Image sizes='12' loading='lazy' preview={false} src={
+                        iconMap.find(x => x.index == index)?.image || SVG.mountainsWhite
+                      } />}
+                      type="default"
+                      shape="round"
+                      size="large"
+                      className='btn-case'
+                      key={index}
+                      onClick={() => { this.onFilterLocation(index) }}
+                    >
+                      <label>{item}</label>
+                    </Button>
+                  </motion.div>
                 );
               })
             }
@@ -475,19 +496,26 @@ class Home extends Component<IProps, IState> {
 
             {/* Draw schedule */}
             <Col span={24}>
-              <Card className='card-calendar'>
-                <Calendar
-                  defaultValue={currentDate}
-                  fullscreen={true}
-                  onChange={this.onChangeCalendar}
-                  onPanelChange={this.onPanelChangeCalendar}
-                  onSelect={this.onSelectCalendar}
-                  mode='month'
-                  value={currentDate}
-                  headerRender={this.headerRender}
-                  fullCellRender={this.dateCellRender}
-                />
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <Card className='card-calendar'>
+                  <Calendar
+                    defaultValue={currentDate}
+                    fullscreen={true}
+                    onChange={this.onChangeCalendar}
+                    onPanelChange={this.onPanelChangeCalendar}
+                    onSelect={this.onSelectCalendar}
+                    mode='month'
+                    value={currentDate}
+                    headerRender={this.headerRender}
+                    fullCellRender={this.dateCellRender}
+                  />
+                </Card>
+              </motion.div>
             </Col>
           </Row>
 
@@ -592,20 +620,29 @@ class Home extends Component<IProps, IState> {
           </Row>
           {/* list */}
           <Row {...globalProps.row12 as any}>
+
             <Col {...globalProps.colFull as any} className='bloc-3-cases-container'>
               {
                 dataFill.bloc_3?.cases?.map((item: any, index: number) => {
                   return (
-                    <div className='bloc-3-cases' key={index}>
-                      <Image className='image' loading='lazy' src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31} preview={false} />
+                    <motion.div
+                      className='bloc-3-cases'
+                      key={index}
+                      initial={{ opacity: 0, x: 200 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.7 }}
+                      viewport={{ once: true }}
+                    >
+                      <img className='image' loading='lazy' src={imageBlock3.find(x => x.index == index)?.image || IMAGE.imgBlock31} />
                       <div><h2 className='title-case'>{item.category}</h2></div>
                       <div><h3 className='sub-title-case'>{item.tagline}</h3></div>
                       <div className='box-des'><p className='description-case'>{item.description}</p></div>
-                    </div>
+                    </motion.div>
                   );
                 })
               }
             </Col>
+
             <Col {...globalProps.colFull as any} className='txt-center btn-learn-more-container'>
               <Button
                 type="primary"
@@ -622,7 +659,13 @@ class Home extends Component<IProps, IState> {
         <div className='bloc-4'>
 
           <div className='bloc-4-container'>
-            <div className='bloc-4-text'>
+            <motion.div
+              className='bloc-4-text'
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
               <div>
                 <h2 className='title-bloc-4'>{dataFill.bloc_4?.title}</h2>
                 <h2 className='text-title-bloc-4'>{dataFill.bloc_4?.text_title}</h2>
@@ -633,17 +676,28 @@ class Home extends Component<IProps, IState> {
               <div className='text-bloc-4'>
                 <p>{dataFill.bloc_4?.text}</p>
               </div>
-            </div>
-            <div className='bloc-4-image'>
+            </motion.div>
+            <motion.div
+              className='bloc-4-image'
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
               <img loading='lazy' src={IMAGE.iceCream} />
-            </div>
+            </motion.div>
           </div>
 
           <Row {...globalProps.row12 as any} className='txt-center bloc-4-cases-container'>
             {dataFill.bloc_4?.pictos?.map((picto: any, index: number) => (
               <Col key={index} >
-                <img loading='lazy' className='image'
-                  src={icon.find(x => x.index == index)?.image || IMAGE.iconAuth} />
+                <div><motion.img
+                  loading="lazy"
+                  className="image"
+                  src={icon.find(x => x.index == index)?.image || IMAGE.iconAuth}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                /></div>
                 <div className='icon-tilte'>
                   <h2>{picto.title}</h2>
                 </div>
@@ -653,6 +707,7 @@ class Home extends Component<IProps, IState> {
               </Col>
             ))}
           </Row>
+
         </div>
 
 
@@ -674,7 +729,14 @@ class Home extends Component<IProps, IState> {
               <div className='bg-image'>
                 <img loading='lazy' src={IMAGE.bgLafamille} />
               </div>
-              <div className='card-inside'>
+
+              <motion.div
+                className='card-inside'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3 }}
+                viewport={{ once: true }}
+              >
                 <img loading='lazy' src={IMAGE.familleInside} />
                 <div className='title-inside'>
                   <h2>La famille</h2>
@@ -683,21 +745,45 @@ class Home extends Component<IProps, IState> {
                 <div className='des-inside'>
                   <span className='des'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
                 </div>
-              </div>
+              </motion.div>
             </Col>
           </Row>
 
-          <Row {...globalProps.row12 as any} className='txt-center review-container'>
+          <Row {...(globalProps.row12 as any)} className="txt-center review-container">
             {dataFill.bloc_5?.reviews?.map((item: any, index: number) => (
-              <Col key={index} >
-                <div className='image-review'>
-                  <img loading='lazy' src={socialMediaCard.find(x => x.index == index)?.image} />
-                </div>
-                <div className='text-inside'>
-                  <img loading='lazy' src={IMAGE.mdiInstagram} />
-                  <label className='author'>{item.author}</label>
-                  <img loading='lazy' src={SVG.arrowUpRightWhite} />
-                </div>
+              <Col key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    className="image-review"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 200 }}
+                  >
+                    <img loading="lazy" src={socialMediaCard.find(x => x.index == index)?.image} />
+                  </motion.div>
+
+                  <motion.div
+                    className="text-inside"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img loading="lazy" src={IMAGE.mdiInstagram} />
+                    <motion.label
+                      className="author"
+                      whileHover={{ color: "#f2542d" }}
+                    >
+                      {item.author}
+                    </motion.label>
+                    <motion.img
+                      loading="lazy"
+                      src={SVG.arrowUpRightWhite}
+                      whileHover={{ rotate: 15 }}
+                    />
+                  </motion.div>
+                </motion.div>
               </Col>
             ))}
           </Row>
@@ -754,9 +840,12 @@ class Home extends Component<IProps, IState> {
               <Row {...globalProps.row12 as any} className='row-links'>
                 {dataFill.footer?.links?.map((item: any, index: number) => (
                   <Col key={index} {...globalProps.col as any}>
-                    <div>
+                    <motion.div
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
                       <p className='name'>{item.name}</p>
-                    </div>
+                    </motion.div>
                   </Col>
                 ))}
               </Row>

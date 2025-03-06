@@ -7,6 +7,13 @@
 
         .sub-menu {
             display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-send-icon {
+            display: none;
         }
 
         .right-menu {
@@ -31,6 +38,7 @@
         align-items: center;
         padding: 5px;
         border-radius: 8px;
+        transition: all 0.1s ease;
 
         .text-cell-calendar {
             display: none;

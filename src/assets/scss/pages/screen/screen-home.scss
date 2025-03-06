@@ -301,6 +301,19 @@
       max-width: 500px;
       border-radius: 100px;
       background: #F2542D;
+
+      &:hover {
+        background: #F2542D;
+      }
+
+      &:focus {
+        background: #F2542D;
+      }
+
+      &:active {
+        background: #F2542D;
+      }
+
     }
 
   }
@@ -586,6 +599,10 @@
 
       .row-links {
         justify-content: flex-start;
+
+        p {
+          cursor: pointer;
+        }
       }
 
       p {

@@ -18,6 +18,38 @@
 
         }
 
+        .btn-send {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 4px;
+            background: #f2542d;
+            color: #fff;
+
+            &:focus {
+                border-color: #f2542d !important;
+                background: #f2542d !important;
+                color: #fff !important;
+            }
+
+            &:active {
+                border-color: #f2542d !important;
+                background: #f2542d !important;
+                color: #fff !important;
+            }
+
+            &:hover {
+                border-color: #f2542d !important;
+                background: #f2542d !important;
+                color: #fff !important;
+            }
+
+            img {
+                width: 24px;
+            }
+        }
+
         .right-menu {
             .collapsed {
                 display: none;
@@ -98,7 +130,7 @@
         .bloc-2-2,
         .bloc-3,
         .bloc-4 {
-            padding: 2rem 15%;
+            padding: 2rem 12%;
         }
     }
 
@@ -183,7 +215,7 @@
 
 
     .screen-home .bloc-5 {
-        padding: 2rem 15%;
+        padding: 2rem 10%;
     }
 
     .screen-home .bloc-1 .bloc-1-cases-container .even {
