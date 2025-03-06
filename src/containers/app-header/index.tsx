@@ -96,11 +96,6 @@ class AppHeader extends Component<IProps, IState> {
               <img className="" src={SVG.arrowUpRightWhite} alt="btn-img" />
             </Button>
           </div>
-          {/* <div className="btn-send-icon">
-            <span>{menu?.length > 4 ? menu?.[4] : "Contactez-nous"}</span>
-            <img src={SVG.arrowUpRightWhite} alt="btn-img" />
-          </div> */}
-
           <div className="right-menu">
             <div className="collapsed">
               <Button
@@ -112,14 +107,12 @@ class AppHeader extends Component<IProps, IState> {
             </div>
             {lang == LangEnum.FR && (
               <div className="lang-group">
-                <Image loading='lazy' onClick={() => onChangeLang(LangEnum.EN)} preview={false} src={SVG.fr} />
-                {/* <div><strong>VN</strong></div> */}
+                <img loading='lazy' onClick={() => onChangeLang(LangEnum.EN)} src={SVG.fr} />
               </div>
             )}
             {lang == LangEnum.EN && (
               <div className="lang-group">
-                <Image loading='lazy' onClick={() => onChangeLang(LangEnum.FR)} preview={false} src={SVG.en} />
-                {/* <div><strong>EN</strong></div> */}
+                <img loading='lazy' onClick={() => onChangeLang(LangEnum.FR)} src={SVG.en} />
               </div>
             )}
           </div>
@@ -128,7 +121,6 @@ class AppHeader extends Component<IProps, IState> {
         <Drawer
           title={
             <div className="logo">
-              {/* <Image loading='lazy' src={IMAGE.logo} preview={false} /> */}
               <div><label>LOGO SAMPLE</label></div>
             </div>
           }
